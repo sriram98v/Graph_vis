@@ -29,14 +29,17 @@ nav{
     float: left;
     width: 24%;
     height: 50%;
-    overflow-y:auto
+    overflow-y:auto;
+    border: 1px solid lightgray;
+
 }
 
 #info{
     float: left;
     width: 24%;
     height: 50%;
-    overflow-y:auto
+    overflow-y:auto;
+    border: 1px solid lightgray;
 }
 
 footer{
