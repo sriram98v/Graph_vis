@@ -12,7 +12,9 @@ function readGraph() {
         var container = document.getElementById('graph');
         let graphJSON = reader.result;
         var array = JSON.parse(graphJSON);
-        data = {nodes: array[0], edges: array[1]};
+        var nodes = new vis.DataSet(array[0]);
+        var edges = new vis.DataSet(array[1]);
+        data = {nodes: nodes, edges: edges};
         var options = {
             "configure": {
                 "enabled": true,
@@ -49,6 +51,11 @@ function readGraph() {
         };
         options.configure["container"] = document.getElementById("config");
         network = new vis.Network(container, data, options);
-        console.log(data.nodes[0])
+        network.on( 'click', function(properties) {
+            var ids = properties.nodes;
+            var clickedNodes = nodes.get(ids);
+            console.log('clicked nodes:', clickedNodes);
+        });
+        
       };
 }
