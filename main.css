@@ -41,10 +41,3 @@ nav{
     overflow-y:auto;
     border: 1px solid lightgray;
 }
-
-footer{
-    border: 0px;
-    height: 5%;
-    width: 100%;
-    clear: both;
-}
