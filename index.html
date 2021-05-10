@@ -11,28 +11,33 @@
 
   <body>
 
-    <header>
-      <h1>Graph Visualization</h1>
-    </header>
-
-    <nav>
-      <input type="file" id="graphInput">
-    </nav>
-
-    <div id="main">
-      <div id="graph">
-      </div>
-
-      <div id="info">
-      </div>
-
-      <div id="config">
+    <div class="flex flex-column h-100">
+      <header>
+        <h1>Graph Visualization</h1>
+      </header>
+  
+      <nav>
+        <input type="file" id="graphInput">
+        <a href="graph.json" download="graph.json">Sample File</a>
+      </nav>
+  
+      <div class="flex-grow-1">
+        <div class="flex h-100">
+          <div class="w-75 mh-100">
+            <div id="graph" class="w-100 h-100">
+            </div>
+          </div>
+    
+          <div class="flex-column w-25 h-100">
+            <div id="info">
+            </div>
+      
+            <div id="config" class="flex-grow-1 overflow-y-scroll">
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-
-    <footer>
-      <p>Simple graph visulization using vis.js</p>
-    </footer>
 
   </body>
 </html>

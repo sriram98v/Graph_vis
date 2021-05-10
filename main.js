@@ -1,5 +1,6 @@
-
 document.getElementById('graphInput').addEventListener('change', readGraph, false);
+
+const info = document.getElementById("info");
 
 
 function readGraph() {
@@ -54,7 +55,9 @@ function readGraph() {
         network.on( 'click', function(properties) {
             var ids = properties.nodes;
             var clickedNodes = nodes.get(ids);
-            console.log('clicked nodes:', clickedNodes);
+            if(clickedNodes[0]){
+                info.textContent = clickedNodes[0].label;
+            }
         });
         
       };
