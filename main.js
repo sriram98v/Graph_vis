@@ -13,8 +13,8 @@ function readGraph() {
         var container = document.getElementById('graph');
         let graphJSON = reader.result;
         var array = JSON.parse(graphJSON);
-        var nodes = new vis.DataSet(array[0]);
-        var edges = new vis.DataSet(array[1]);
+        var nodes = new vis.DataSet(array.nodes);
+        var edges = new vis.DataSet(array.edges);
         data = {nodes: nodes, edges: edges};
         var options = {
             "configure": {
