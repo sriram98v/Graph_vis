@@ -1,4 +1,4 @@
-document.getElementById('graphInput').addEventListener('change', readGraph, false);
+document.getElementById('uploadFile').addEventListener('change', readGraph, false);
 
 const info = document.getElementById("info");
 
@@ -50,6 +50,8 @@ function readGraph() {
                 }
             }
         };
+				document.getElementById("placeholder").style.display = "none"
+				document.getElementById("main").style.display = ""
         options.configure["container"] = document.getElementById("config");
         network = new vis.Network(container, data, options);
         network.on( 'click', function(properties) {
@@ -59,6 +61,20 @@ function readGraph() {
                 info.textContent = clickedNodes[0].label;
             }
         });
-        
+
       };
 }
+				
+let optionsToggle = document.getElementById("toggleMenu")
+let hamburger = document.querySelector(".hamburger")
+let optionsMenu = document.getElementById("options")
+let overlay = document.getElementById("overlay")
+optionsToggle.addEventListener("click", toggleMenu, true)
+function toggleMenu(e) {
+    e.stopPropagation()
+    hamburger.classList.toggle("toggle")
+    optionsToggle.classList.toggle("toggle")
+    options.classList.toggle("toggle")
+    overlay.classList.toggle("toggle")
+}
+
